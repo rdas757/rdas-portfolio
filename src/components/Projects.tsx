@@ -1,7 +1,6 @@
 
 import { Folder } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 
 interface Project {
   title: string;
@@ -30,10 +29,10 @@ const projects: Project[] = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="bg-white py-20">
+    <section id="projects" className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center mb-10">
-          <Folder size={24} className="text-accent mr-3" />
+          <Folder size={24} className="text-neon-cyan mr-3" />
           <h2 className="section-title">Projects</h2>
         </div>
         
@@ -41,32 +40,33 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.title} 
-              className="hover:shadow-lg transition-shadow overflow-hidden"
+              className="bg-dark-800 border-dark-700 hover:border-neon-cyan transition-all duration-300 overflow-hidden hover:shadow-[0_0_20px_rgba(0,238,255,0.15)]"
+              style={{ animationDelay: `${0.2 * index}s` }}
             >
-              <div className="h-48 bg-navy-100 flex items-center justify-center">
+              <div className="h-48 bg-gradient-to-br from-dark-700 to-dark-900 flex items-center justify-center overflow-hidden group">
                 {project.imageUrl ? (
                   <img 
                     src={project.imageUrl} 
                     alt={project.title} 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 ) : (
-                  <Folder size={64} className="text-navy-300" />
+                  <Folder size={64} className="text-neon-cyan opacity-70 group-hover:scale-110 transition-transform duration-300" />
                 )}
               </div>
               
               <CardHeader>
-                <CardTitle className="text-navy-800">{project.title}</CardTitle>
+                <CardTitle className="text-white font-semibold">{project.title}</CardTitle>
               </CardHeader>
               
               <CardContent>
-                <CardDescription className="text-navy-600 mb-4">
+                <CardDescription className="text-gray-400 mb-4">
                   {project.description}
                 </CardDescription>
                 
-                <div className="flex flex-wrap gap-2 mt-2">
+                <div className="flex flex-wrap gap-2 mt-4">
                   {project.technologies.map(tech => (
-                    <span key={tech} className="text-xs px-2 py-1 bg-navy-50 text-navy-600 rounded-full">
+                    <span key={tech} className="skill-badge">
                       {tech}
                     </span>
                   ))}

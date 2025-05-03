@@ -35,24 +35,31 @@ const experiences: ExperienceItem[] = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="bg-gray-50 py-20">
+    <section id="experience" className="py-20 relative">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center mb-10">
-          <Briefcase size={24} className="text-accent mr-3" />
+          <Briefcase size={24} className="text-neon-cyan mr-3" />
           <h2 className="section-title">Work Experience</h2>
         </div>
         
         <div className="max-w-3xl mx-auto">
           {experiences.map((exp, index) => (
-            <div key={exp.title} className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="ml-6">
-                <h3 className="text-xl font-semibold text-navy-800">{exp.title}</h3>
-                <h4 className="text-navy-600 font-medium mb-2">{exp.company}</h4>
-                <p className="text-sm text-navy-500 mb-3">{exp.period}</p>
-                <ul className="list-disc pl-5 space-y-1 text-navy-700">
+            <div 
+              key={exp.title} 
+              className="relative pl-8 pb-12 border-l border-neon-cyan/30 last:border-0 last:pb-0"
+              style={{ animationDelay: `${0.2 * index}s` }}
+            >
+              <div className="absolute -left-1.5 bg-neon-cyan w-3 h-3 rounded-full shadow-[0_0_10px_rgba(0,238,255,0.7)]"></div>
+              <div className="glass-card p-6 ml-6">
+                <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
+                <h4 className="text-neon-cyan font-medium mb-2">{exp.company}</h4>
+                <p className="text-sm text-gray-400 mb-4">{exp.period}</p>
+                <ul className="space-y-2 text-gray-300">
                   {exp.description.map((item, idx) => (
-                    <li key={idx}>{item}</li>
+                    <li key={idx} className="flex items-start">
+                      <span className="text-neon-cyan mr-2 mt-1">•</span>
+                      <span>{item}</span>
+                    </li>
                   ))}
                 </ul>
               </div>

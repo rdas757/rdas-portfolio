@@ -5,33 +5,33 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 225 5% 8%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 228 9% 11%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 228 9% 11%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 221 83% 18%;
+    --primary: 196 100% 50%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 228 6% 16%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 215 27% 16%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 221 83% 53%;
+    --accent: 196 100% 50%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221 83% 53%;
+    --border: 215 27% 16%;
+    --input: 215 27% 16%;
+    --ring: 196 100% 50%;
 
     --radius: 0.5rem;
 
@@ -42,44 +42,6 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -102,26 +64,46 @@
 
 @layer components {
   .section-title {
-    @apply text-3xl font-bold mb-6 text-navy-800 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-1/2 after:h-1 after:bg-accent after:rounded-full;
+    @apply text-3xl font-bold mb-8 text-white relative inline-block;
+  }
+  
+  .section-title::after {
+    @apply content-[''] absolute -bottom-2 left-0 w-1/2 h-[3px] bg-neon-cyan rounded-full;
   }
   
   .nav-link {
-    @apply px-4 py-2 text-navy-700 hover:text-accent transition-colors duration-200;
+    @apply px-4 py-2 text-gray-300 hover:text-neon-cyan transition-colors duration-200;
   }
   
   .nav-link.active {
-    @apply text-accent font-medium;
+    @apply text-neon-cyan font-medium;
   }
   
   .skill-badge {
-    @apply px-3 py-1 rounded-full bg-navy-100 text-navy-800 text-sm font-medium;
+    @apply px-3 py-1 rounded-full bg-dark-800 text-neon-cyan text-sm font-medium border border-dark-700 hover:border-neon-cyan transition-colors duration-300;
   }
   
   .timeline-item {
-    @apply relative pl-8 pb-8 border-l border-navy-200 last:border-0 last:pb-0;
+    @apply relative pl-8 pb-8 border-l border-dark-700 last:border-0 last:pb-0;
   }
   
   .timeline-dot {
-    @apply absolute -left-1.5 bg-accent w-3 h-3 rounded-full;
+    @apply absolute -left-1.5 bg-neon-cyan w-3 h-3 rounded-full;
+  }
+
+  .tech-card {
+    @apply bg-dark-800 border border-dark-700 rounded-lg p-6 transition-all duration-300 hover:border-neon-cyan hover:shadow-[0_0_15px_rgba(0,238,255,0.3)];
+  }
+
+  .glass-card {
+    @apply bg-dark-800/50 backdrop-blur-md border border-dark-700/50 rounded-lg;
+  }
+
+  .neon-border {
+    @apply border border-neon-cyan/20 shadow-[0_0_15px_rgba(0,238,255,0.3)];
+  }
+
+  .grid-bg {
+    @apply bg-grid-pattern bg-[length:30px_30px];
   }
 }

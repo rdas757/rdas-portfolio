@@ -11,7 +11,9 @@ import Footer from "../components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-dark-900 text-gray-100">
+      <div className="fixed inset-0 bg-gradient-radial from-dark-800/50 to-dark-900 -z-10"></div>
+      <div className="fixed inset-0 grid-bg -z-10 opacity-30"></div>
       <Header />
       <Hero />
       <About />
