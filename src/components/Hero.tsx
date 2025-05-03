@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ArrowDown, Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
@@ -38,11 +39,17 @@ const Hero = () => {
           
           <div className="w-full md:w-1/2 flex justify-center">
             <div className="relative animate-float">
-              {/* Profile image placeholder - replace with actual image path */}
               <div className="w-64 h-64 rounded-full border-4 border-neon-cyan/30 overflow-hidden shadow-[0_0_30px_rgba(0,238,255,0.3)]">
-                <div className="w-full h-full bg-gradient-to-br from-dark-700 to-dark-900 flex items-center justify-center text-neon-cyan">
-                  <span className="text-6xl font-bold">RD</span>
-                </div>
+                <Avatar className="w-full h-full">
+                  <AvatarImage 
+                    src="/lovable-uploads/5e036802-54b9-49c9-99e9-26512a9b4a62.png" 
+                    alt="Rahul Das" 
+                    className="object-cover w-full h-full"
+                  />
+                  <AvatarFallback className="bg-gradient-to-br from-dark-700 to-dark-900 text-neon-cyan text-6xl font-bold">
+                    RD
+                  </AvatarFallback>
+                </Avatar>
               </div>
               <div className="absolute inset-0 rounded-full border-[1px] border-neon-cyan/20 animate-ping [animation-duration:3s]"></div>
               <div className="absolute inset-[-4px] rounded-full border border-neon-cyan/30"></div>
