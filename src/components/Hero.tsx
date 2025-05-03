@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { ArrowDown, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Mail, FileText } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -29,9 +29,9 @@ const Hero = () => {
                 </a>
               </Button>
               <Button asChild variant="outline" className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan/10">
-                <a href="https://linkedin.com/in/rahul-das-" target="_blank" rel="noopener noreferrer">
-                  <Linkedin size={18} className="mr-2" />
-                  LinkedIn
+                <a href="#about">
+                  <FileText size={18} className="mr-2" />
+                  View Portfolio
                 </a>
               </Button>
             </div>
