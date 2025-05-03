@@ -44,7 +44,7 @@ const Hero = () => {
                   <AvatarImage 
                     src="/lovable-uploads/5e036802-54b9-49c9-99e9-26512a9b4a62.png" 
                     alt="Rahul Das" 
-                    className="object-cover w-full h-full"
+                    className="object-cover w-full h-full object-[center_35%]"
                   />
                   <AvatarFallback className="bg-gradient-to-br from-dark-700 to-dark-900 text-neon-cyan text-6xl font-bold">
                     RD
