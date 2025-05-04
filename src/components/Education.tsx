@@ -25,14 +25,19 @@ const educations: EducationItem[] = [
 
 const certifications: CertificationItem[] = [
   {
-    title: "Full Stack Web Development",
-    issuer: "TechnoColabs Academy",
-    year: "2021"
+    title: "Bootcamp on Authentication Server",
+    issuer: "Devtown",
+    year: "2022"
   },
   {
-    title: "System Performance Monitoring",
-    issuer: "Dynatrace University",
-    year: "2022"
+    title: "Web Development Bootcamp",
+    issuer: "Udemy",
+    year: "2019"
+  },
+  {
+    title: "Data Structure and Algorithm",
+    issuer: "University of California (San Diego)",
+    year: "2020"
   }
 ];
 
