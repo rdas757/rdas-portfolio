@@ -12,7 +12,7 @@ const experiences: ExperienceItem[] = [
   {
     title: "System Monitoring Engineer",
     company: "Titan Technologies Ltd (contracted to Hyundai USA)",
-    period: "Current",
+    period: "July 2024 - Present",
     description: [
       "Monitor enterprise systems using Dynatrace, Elastic, Grafana, SolarWinds, and MaxGauge.",
       "Analyze system performance metrics and troubleshoot issues to maintain optimal performance.",
@@ -23,7 +23,7 @@ const experiences: ExperienceItem[] = [
   {
     title: "Full Stack Developer Intern",
     company: "TechnoColabs Software",
-    period: "2022",
+    period: "June 2023 - July 2023",
     description: [
       "Developed project management tools using the MERN stack (MongoDB, Express, React, Node.js).",
       "Implemented responsive UI designs with React and material design principles.",

@@ -1,5 +1,5 @@
 
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Contact = () => {
@@ -16,7 +16,7 @@ const Contact = () => {
             Feel free to reach out if you'd like to connect!
           </p>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">
             <Button asChild className="bg-neon-cyan hover:bg-neon-cyan/80 text-dark-900 w-full">
               <a href="mailto:rahul470das@gmail.com">
                 <Mail size={18} className="mr-2" />
@@ -28,6 +28,15 @@ const Contact = () => {
               <a href="https://linkedin.com/in/rahul-das-" target="_blank" rel="noopener noreferrer">
                 <Linkedin size={18} className="mr-2" />
                 LinkedIn
+              </a>
+            </Button>
+          </div>
+          
+          <div className="flex justify-center">
+            <Button asChild variant="outline" className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan/10 w-full">
+              <a href="https://www.facebook.com/profile.php?id=100056906624289" target="_blank" rel="noopener noreferrer">
+                <Facebook size={18} className="mr-2" />
+                Facebook
               </a>
             </Button>
           </div>
