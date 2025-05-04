@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -23,6 +22,9 @@ export default {
       }
     },
     extend: {
+      boxShadow: {
+        'glow': '0 0 15px rgba(0, 238, 255, 0.4)',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

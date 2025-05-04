@@ -6,7 +6,7 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Experience from "../components/Experience";
 import Education from "../components/Education";
-import DevProfiles from "../components/DevProfiles";
+import Links from "../components/Links";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
@@ -22,7 +22,7 @@ const Index = () => {
       <Projects />
       <Experience />
       <Education />
-      <DevProfiles />
+      <Links />
       <Contact />
       <Footer />
     </div>

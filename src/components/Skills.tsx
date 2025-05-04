@@ -1,6 +1,6 @@
 
 import { Code } from "lucide-react";
-import { Progress } from "@/components/ui/progress";
+import { Badge } from "@/components/ui/badge";
 
 interface SkillCategory {
   title: string;
@@ -55,6 +55,13 @@ const skillCategories: SkillCategory[] = [
   }
 ];
 
+const getLevelColor = (level: number): string => {
+  if (level >= 90) return "bg-neon-cyan text-dark-900 hover:bg-neon-cyan/80";
+  if (level >= 80) return "bg-neon-blue text-dark-900 hover:bg-neon-blue/80";
+  if (level >= 70) return "bg-neon-green text-dark-900 hover:bg-neon-green/80";
+  return "bg-neon-pink text-dark-900 hover:bg-neon-pink/80";
+};
+
 const Skills = () => {
   return (
     <section id="skills" className="py-20 relative">
@@ -72,17 +79,16 @@ const Skills = () => {
               style={{ animationDelay: `${0.1 * index}s` }}
             >
               <h3 className="text-xl font-semibold mb-6 text-white">{category.title}</h3>
-              <div className="space-y-4">
+              <div className="flex flex-wrap gap-3">
                 {category.skills.map(skill => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">{skill.name}</span>
-                      <span className="text-neon-cyan font-medium">{skill.level}%</span>
-                    </div>
-                    <Progress value={skill.level} className="h-2 bg-dark-700">
-                      <div className="h-full bg-gradient-to-r from-neon-cyan to-neon-blue rounded-full"></div>
-                    </Progress>
-                  </div>
+                  <Badge 
+                    key={skill.name} 
+                    className={`text-sm py-1.5 px-4 transition-all duration-300 hover:shadow-glow ${getLevelColor(skill.level)}`}
+                    variant="outline"
+                  >
+                    {skill.name}
+                    <span className="ml-2 font-bold">{skill.level}%</span>
+                  </Badge>
                 ))}
               </div>
             </div>

@@ -3,7 +3,7 @@ import { Github, Bookmark } from "lucide-react";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Card, CardContent } from "@/components/ui/card";
 
-const DevProfiles = () => {
+const Links = () => {
   const profiles = [
     {
       name: "GitHub",
@@ -22,10 +22,10 @@ const DevProfiles = () => {
   ];
 
   return (
-    <section id="dev-profiles" className="py-20 relative">
+    <section id="links" className="py-20 relative">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-10 text-center text-white">
-          Dev <span className="text-neon-cyan">Profiles</span>
+          <span className="text-neon-cyan">Links</span>
         </h2>
         
         <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -61,4 +61,4 @@ const DevProfiles = () => {
   );
 };
 
-export default DevProfiles;
+export default Links;
