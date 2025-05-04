@@ -14,24 +14,24 @@ const Hero = () => {
             </h1>
             
             <h2 className="text-xl md:text-2xl font-medium mb-6 text-gray-300 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              System Monitoring Engineer & Full Stack Developer
+              Software Engineer
             </h2>
             
-            <p className="text-lg text-gray-400 mb-8 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-              Crafting reliable solutions with modern technologies
+            <p className="text-lg text-gray-400 mb-8 animate-fade-in leading-relaxed" style={{ animationDelay: "0.5s" }}>
+              Turning ideas into fast, functional, and beautiful products.
             </p>
             
             <div className="flex flex-wrap gap-4 animate-fade-in" style={{ animationDelay: "0.7s" }}>
-              <Button asChild className="bg-neon-cyan hover:bg-neon-cyan/80 text-dark-900">
-                <a href="mailto:rahul470das@gmail.com">
-                  <Mail size={18} className="mr-2" />
-                  Contact Me
-                </a>
-              </Button>
               <Button asChild variant="outline" className="border-neon-cyan text-neon-cyan hover:bg-neon-cyan/10">
                 <a href="#about">
                   <FileText size={18} className="mr-2" />
                   View Portfolio
+                </a>
+              </Button>
+              <Button asChild className="bg-neon-cyan hover:bg-neon-cyan/80 text-dark-900">
+                <a href="mailto:rahul470das@gmail.com">
+                  <Mail size={18} className="mr-2" />
+                  Contact Me
                 </a>
               </Button>
             </div>

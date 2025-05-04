@@ -16,10 +16,10 @@ interface CertificationItem {
 
 const educations: EducationItem[] = [
   {
-    degree: "B.Tech in Computer Science",
-    institution: "NIT Rourkela",
-    year: "2022",
-    details: "CGPA: 7.27/10"
+    degree: "B.Tech in Computer Science and Engineering",
+    institution: "National Institute of Technology, Rourkela, India",
+    year: "2024",
+    details: ""
   }
 ];
 
@@ -53,7 +53,7 @@ const Education = () => {
                 <h3 className="text-xl font-semibold text-white">{edu.degree}</h3>
                 <h4 className="text-neon-cyan font-medium mb-2">{edu.institution}</h4>
                 <p className="text-sm text-gray-400 mb-3">{edu.year}</p>
-                <p className="text-gray-300">{edu.details}</p>
+                {edu.details && <p className="text-gray-300">{edu.details}</p>}
               </div>
             ))}
           </div>
