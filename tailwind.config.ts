@@ -85,6 +85,7 @@ export default {
           green: '#00ff8c',
           pink: '#ff00ea',
           blue: '#0077ff',
+          purple: '#8B5CF6',
         },
         navy: {
           50: '#f0f3f9',
