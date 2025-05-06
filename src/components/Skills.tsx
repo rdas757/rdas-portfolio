@@ -1,4 +1,3 @@
-
 import { Code } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { 
@@ -7,15 +6,13 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { 
-  Html, 
-  Css, 
-  Javascript, 
-  React as ReactIcon, 
-  Python, 
-  Typescript, 
-  Git, 
-  Database, 
-  Github 
+  FileCode, 
+  CircleEqual, 
+  Braces, 
+  SquareCode, 
+  Terminal, 
+  GitBranch, 
+  Database 
 } from "lucide-react";
 
 interface SkillCategory {
@@ -27,18 +24,18 @@ const getIconForSkill = (name: string) => {
   const iconProps = { size: 16, className: "mr-2" };
   
   switch (name.toLowerCase()) {
-    case 'html': return <Html {...iconProps} />;
-    case 'css': return <Css {...iconProps} />;
-    case 'javascript': return <Javascript {...iconProps} />;
-    case 'react': return <ReactIcon {...iconProps} />;
-    case 'python': return <Python {...iconProps} />;
-    case 'typescript': return <Typescript {...iconProps} />;
-    case 'github': return <Github {...iconProps} />;
-    case 'git': return <Git {...iconProps} />;
+    case 'html': return <FileCode {...iconProps} />;
+    case 'css': return <CircleEqual {...iconProps} />;
+    case 'javascript': return <Braces {...iconProps} />;
+    case 'react': return <SquareCode {...iconProps} />;
+    case 'python': return <Terminal {...iconProps} />;
+    case 'typescript': return <FileCode {...iconProps} />;
+    case 'github': 
+    case 'git': return <GitBranch {...iconProps} />;
     case 'mongodb':
     case 'mysql': 
       return <Database {...iconProps} />;
-    default: return null;
+    default: return <Code {...iconProps} />;
   }
 };
 
@@ -149,7 +146,7 @@ const Skills = () => {
                             <p className="text-sm text-gray-400">Proficiency: {skill.level}%</p>
                           </div>
                           <div className="text-neon-cyan">
-                            {getIconForSkill(skill.name) || <Code size={24} />}
+                            {getIconForSkill(skill.name)}
                           </div>
                         </div>
                       </HoverCardContent>
