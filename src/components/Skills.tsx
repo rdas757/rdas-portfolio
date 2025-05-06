@@ -1,10 +1,5 @@
+
 import { Code } from "lucide-react";
-import { Progress } from "@/components/ui/progress";
-import { 
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
 import { 
   FileCode, 
   CircleEqual, 
@@ -14,14 +9,16 @@ import {
   GitBranch, 
   Database 
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-interface SkillCategory {
-  title: string;
-  skills: { name: string; level: number; icon?: React.ReactNode }[];
+interface Skill {
+  name: string;
+  icon?: React.ReactNode;
+  category: string;
 }
 
 const getIconForSkill = (name: string) => {
-  const iconProps = { size: 16, className: "mr-2" };
+  const iconProps = { size: 24, className: "mb-2" };
   
   switch (name.toLowerCase()) {
     case 'html': return <FileCode {...iconProps} />;
@@ -39,60 +36,46 @@ const getIconForSkill = (name: string) => {
   }
 };
 
-const skillCategories: SkillCategory[] = [
-  {
-    title: "Programming Languages",
-    skills: [
-      { name: "C", level: 85 },
-      { name: "C++", level: 80 },
-      { name: "Python", level: 75 },
-      { name: "JavaScript", level: 90 }
-    ]
-  },
-  {
-    title: "Web Development",
-    skills: [
-      { name: "React", level: 90 },
-      { name: "NodeJS", level: 85 },
-      { name: "HTML", level: 95 },
-      { name: "CSS", level: 85 },
-      { name: "Express", level: 80 }
-    ]
-  },
-  {
-    title: "Databases",
-    skills: [
-      { name: "MongoDB", level: 85 },
-      { name: "MySQL", level: 80 }
-    ]
-  },
-  {
-    title: "Monitoring Tools",
-    skills: [
-      { name: "Dynatrace", level: 90 },
-      { name: "Elastic", level: 85 },
-      { name: "Grafana", level: 85 },
-      { name: "SolarWinds", level: 75 },
-      { name: "MaxGauge", level: 75 }
-    ]
-  },
-  {
-    title: "Developer Tools",
-    skills: [
-      { name: "VS Code", level: 95 },
-      { name: "GitHub", level: 90 },
-      { name: "Jira", level: 80 },
-      { name: "Excel", level: 75 }
-    ]
-  }
+const skills: Skill[] = [
+  // Programming Languages
+  { name: "C", category: "Programming Languages" },
+  { name: "C++", category: "Programming Languages" },
+  { name: "Python", category: "Programming Languages" },
+  { name: "JavaScript", category: "Programming Languages" },
+  
+  // Web Development
+  { name: "React", category: "Web Development" },
+  { name: "NodeJS", category: "Web Development" },
+  { name: "HTML", category: "Web Development" },
+  { name: "CSS", category: "Web Development" },
+  { name: "Express", category: "Web Development" },
+  
+  // Databases
+  { name: "MongoDB", category: "Databases" },
+  { name: "MySQL", category: "Databases" },
+  
+  // Monitoring Tools
+  { name: "Dynatrace", category: "Monitoring Tools" },
+  { name: "Elastic", category: "Monitoring Tools" },
+  { name: "Grafana", category: "Monitoring Tools" },
+  { name: "SolarWinds", category: "Monitoring Tools" },
+  { name: "MaxGauge", category: "Monitoring Tools" },
+  
+  // Developer Tools
+  { name: "VS Code", category: "Developer Tools" },
+  { name: "GitHub", category: "Developer Tools" },
+  { name: "Jira", category: "Developer Tools" },
+  { name: "Excel", category: "Developer Tools" }
 ];
 
-const getProgressGradient = (level: number): string => {
-  if (level >= 90) return "from-neon-cyan to-neon-blue";
-  if (level >= 80) return "from-neon-blue to-neon-green";
-  if (level >= 70) return "from-neon-green to-neon-cyan";
-  return "from-neon-pink to-neon-purple";
-};
+// Group skills by category
+const skillsByCategory = skills.reduce((acc, skill) => {
+  if (!acc[skill.category]) {
+    acc[skill.category] = [];
+  }
+  acc[skill.category].push(skill);
+  return acc;
+}, {} as Record<string, Skill[]>);
 
 const Skills = () => {
   return (
@@ -104,58 +87,27 @@ const Skills = () => {
         </div>
         
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {skillCategories.map((category, index) => (
-              <div 
-                key={category.title} 
-                className="tech-card"
-                style={{ animationDelay: `${0.1 * index}s` }}
-              >
-                <h3 className="text-xl font-semibold mb-6 text-white">{category.title}</h3>
-                <div className="space-y-5">
-                  {category.skills.map(skill => (
-                    <HoverCard key={skill.name} openDelay={200} closeDelay={100}>
-                      <HoverCardTrigger asChild>
-                        <div className="group">
-                          <div className="flex items-center justify-between mb-2">
-                            <div className="flex items-center">
-                              {getIconForSkill(skill.name)}
-                              <span className="font-medium text-gray-200 group-hover:text-neon-cyan transition-colors">
-                                {skill.name}
-                              </span>
-                            </div>
-                            <span className="text-sm text-gray-400 group-hover:text-neon-cyan transition-colors">
-                              {skill.level}%
-                            </span>
-                          </div>
-                          <Progress 
-                            value={skill.level} 
-                            className="h-2 bg-dark-800"
-                          >
-                            <div 
-                              className={`h-full rounded-full bg-gradient-to-r ${getProgressGradient(skill.level)} transition-all duration-500 group-hover:shadow-[0_0_8px_rgba(0,238,255,0.6)]`}
-                              style={{ width: `${skill.level}%` }}
-                            />
-                          </Progress>
-                        </div>
-                      </HoverCardTrigger>
-                      <HoverCardContent className="glass-card border-neon-cyan/20 w-80">
-                        <div className="flex justify-between">
-                          <div>
-                            <h4 className="font-semibold">{skill.name}</h4>
-                            <p className="text-sm text-gray-400">Proficiency: {skill.level}%</p>
-                          </div>
-                          <div className="text-neon-cyan">
-                            {getIconForSkill(skill.name)}
-                          </div>
-                        </div>
-                      </HoverCardContent>
-                    </HoverCard>
-                  ))}
-                </div>
+          {Object.entries(skillsByCategory).map(([category, categorySkills]) => (
+            <div key={category} className="mb-12 last:mb-0">
+              <h3 className="text-xl font-semibold mb-6 text-white">{category}</h3>
+              
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {categorySkills.map(skill => (
+                  <div 
+                    key={`${category}-${skill.name}`}
+                    className="flex flex-col items-center justify-center p-4 rounded-lg bg-dark-800/80 border border-dark-700 transition-all duration-300 hover:border-neon-cyan hover:shadow-[0_0_15px_rgba(0,238,255,0.3)] hover:-translate-y-1"
+                  >
+                    <div className="text-neon-cyan">
+                      {getIconForSkill(skill.name)}
+                    </div>
+                    <span className="text-gray-200 text-sm font-medium text-center">
+                      {skill.name}
+                    </span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
