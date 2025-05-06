@@ -12,7 +12,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Content-Based Image Retrieval",
-    description: "A system that retrieves images similar to a query image based on visual features like color, texture, and shape.",
+    description: "Conducted a thesis on content-based image retrieval using joint color texture techniques such as LTP, LTrP and Color Histogram",
     technologies: ["Python", "OpenCV", "Machine Learning", "Image Processing"],
   },
   {
