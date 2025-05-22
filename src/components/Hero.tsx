@@ -42,7 +42,7 @@ const Hero = () => {
               <div className="w-64 h-64 rounded-full border-4 border-neon-cyan/30 overflow-hidden shadow-[0_0_30px_rgba(0,238,255,0.3)]">
                 <Avatar className="w-full h-full">
                   <AvatarImage 
-                    src="/lovable-uploads/5e036802-54b9-49c9-99e9-26512a9b4a62.png" 
+                    src="/rdas-portfolio/lovable-uploads/5e036802-54b9-49c9-99e9-26512a9b4a62.png" 
                     alt="Rahul Das" 
                     className="object-cover w-full h-full object-[center_35%]"
                   />
