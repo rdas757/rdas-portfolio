@@ -10,6 +10,18 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
+    title: "Data Scientist",
+    company: "AppCurators · Full-time",
+    period: "Sep 2025 - Present · 8 mos | Noida, Uttar Pradesh, India · Remote",
+    description: [
+      "Develop end-to-end data pipelines using Python and SQL for fintech, gaming, and e-commerce clients.",
+      "Build and optimize machine learning models and conduct data analysis and A/B testing to guide product decisions.",
+      "Create interactive dashboards and reports for KPI tracking.",
+      "Collaborate with backend and mobile teams to integrate ML models through FastAPI APIs.",
+      "Work on fraud detection, dynamic pricing, and user analytics while ensuring data quality and documentation."
+    ]
+  },
+  {
     title: "System Monitoring Engineer",
     company: "Titan Technologies Ltd (contracted to Hyundai USA)",
     period: "July 2024 - Present",

@@ -14,22 +14,24 @@ const About = () => {
         <div className="max-w-3xl mx-auto glass-card p-8">
           <div className="prose prose-lg prose-invert">
             <p className="text-gray-300 mb-4 leading-relaxed">
-              I am a motivated Computer Science graduate from NIT Rourkela, India with a strong foundation in both 
-              system monitoring and full stack development. Currently working as a System Monitoring Engineer at 
-              Titan Technologies Ltd (contracted to Hyundai USA), I specialize in monitoring enterprise systems and 
-              ensuring they operate at peak performance.
+              I am a motivated Computer Science graduate from NIT Rourkela, India with a strong foundation in
+              data science, system monitoring, and full stack development. Currently working as a <span className="text-neon-cyan">Data Scientist at AppCurators</span>,
+              I develop end-to-end data pipelines using Python and SQL, build and optimize machine learning models,
+              and conduct data analysis and A/B testing to support product decisions across fintech, gaming, and e-commerce domains.
             </p>
             
             <Separator className="my-6 bg-dark-700" />
             
             <p className="text-gray-300 mb-4 leading-relaxed">
-              My expertise includes working with modern monitoring tools like <span className="text-neon-cyan">Dynatrace</span>, <span className="text-neon-green">Elastic</span>, <span className="text-neon-blue">Grafana</span>, SolarWinds, 
-              and MaxGauge, as well as full stack development using the <span className="text-neon-pink">MERN stack</span> (MongoDB, Express, React, Node.js).
+              Previously, I worked as a <span className="text-neon-green">System Monitoring Engineer at Titan Technologies Ltd</span> (contracted to Hyundai USA),
+              where I specialized in monitoring enterprise systems and ensuring optimal performance and reliability using tools such as{" "}
+              <span className="text-neon-cyan">Dynatrace</span>, <span className="text-neon-green">Elastic</span>, <span className="text-neon-blue">Grafana</span>, SolarWinds, and MaxGauge.
             </p>
             
             <p className="text-gray-300 leading-relaxed">
-              I'm passionate about creating efficient, user-friendly applications and implementing robust monitoring 
-              solutions that help businesses maintain system reliability and performance.
+              My expertise also includes full stack web development using the <span className="text-neon-pink">MERN stack</span> (MongoDB, Express, React, Node.js).
+              I am passionate about building scalable, user-friendly applications and implementing data-driven and monitoring
+              solutions that enhance system performance and business efficiency.
             </p>
           </div>
         </div>

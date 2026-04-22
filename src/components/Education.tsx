@@ -12,6 +12,7 @@ interface CertificationItem {
   title: string;
   issuer: string;
   year: string;
+  details?: string;
 }
 
 const educations: EducationItem[] = [
@@ -24,6 +25,12 @@ const educations: EducationItem[] = [
 ];
 
 const certifications: CertificationItem[] = [
+  {
+    title: "Certificate of Presentation - ICCIT 2025",
+    issuer: "28th International Conference on Computer and Information Technology (ICCIT-2025)",
+    year: "Dec 2025",
+    details: "Presented Paper: \"Content Based Image Retrieval Using Joint Color-Texture Histogram with LTP and LTrP\""
+  },
   {
     title: "Bootcamp on Authentication Server",
     issuer: "Devtown",
@@ -77,6 +84,7 @@ const Education = () => {
                 <h3 className="text-lg font-semibold text-white">{cert.title}</h3>
                 <p className="text-neon-cyan">{cert.issuer}</p>
                 <p className="text-sm text-gray-400">{cert.year}</p>
+                {cert.details && <p className="text-sm text-gray-300 mt-2 italic">{cert.details}</p>}
               </div>
             ))}
           </div>
