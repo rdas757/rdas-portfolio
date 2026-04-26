@@ -1,18 +1,26 @@
 
-import { Folder } from "lucide-react";
+import { Folder, Github, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface Project {
   title: string;
   description: string;
   technologies: string[];
+  githubUrl?: string;
+  liveUrl?: string;
   imageUrl?: string;
 }
 
 const projects: Project[] = [
   {
+    title: "Game Player Behavior Analytics",
+    description: "Analyzed mobile game player behavior using K-Means clustering to segment players (Casual, Mid-Core, Hardcore, Whales) and built a Random Forest churn prediction model. Includes an interactive Streamlit dashboard with KPI tracking and visualizations.",
+    technologies: ["Python", "Scikit-learn", "Streamlit", "Plotly", "Pandas", "K-Means", "Random Forest"],
+    githubUrl: "https://github.com/rdas757/game-player-analytics",
+  },
+  {
     title: "Content-Based Image Retrieval",
-    description: "Conducted a thesis on content-based image retrieval using joint color texture techniques such as LTP, LTrP and Color Histogram",
+    description: "Conducted a thesis on content-based image retrieval using joint color texture techniques such as LTP, LTrP and Color Histogram. Presented at the 28th International Conference on Computer and Information Technology (ICCIT 2025).",
     technologies: ["Python", "OpenCV", "Machine Learning", "Image Processing"],
   },
   {
@@ -72,6 +80,29 @@ const Projects = () => {
                   ))}
                 </div>
               </CardContent>
+
+              {project.githubUrl && (
+                <CardFooter className="flex gap-4">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-neon-cyan hover:text-white transition-colors text-sm"
+                  >
+                    <Github size={16} /> View on GitHub
+                  </a>
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-neon-green hover:text-white transition-colors text-sm"
+                    >
+                      <ExternalLink size={16} /> Live Demo
+                    </a>
+                  )}
+                </CardFooter>
+              )}
             </Card>
           ))}
         </div>
