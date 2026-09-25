@@ -37,7 +37,7 @@ const projects: Project[] = [
     githubUrl: "https://github.com/rdas757/Transport-System",
   },
   {
-    title: "BloodFit",
+    title: "NutriAI",
     description: "An AI-powered health platform that generates personalized nutrition and workout plans based on blood type. Includes a full user app and a super admin dashboard.",
     technologies: ["AI", "React", "Node.js", "MongoDB", "Health Tech"],
     githubUrl: "https://github.com/rdas757/BloodFit",
