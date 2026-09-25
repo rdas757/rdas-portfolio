@@ -13,6 +13,12 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Multi-Agent AI Research System",
+    description: "A multi-agent AI pipeline where three specialized agents collaborate to research any topic: a Researcher searches the web, an Analyst fact-checks and adds context, and a Writer produces a polished professional report — all automatically.",
+    technologies: ["Python", "LangChain", "Google Gemini", "Streamlit", "DuckDuckGo Search", "Multi-Agent AI"],
+    githubUrl: "https://github.com/rdas757/-Multi-agent-researcher",
+  },
+  {
     title: "Game Player Behavior Analytics",
     description: "Analyzed mobile game player behavior using K-Means clustering to segment players (Casual, Mid-Core, Hardcore, Whales) and built a Random Forest churn prediction model. Includes an interactive Streamlit dashboard with KPI tracking and visualizations.",
     technologies: ["Python", "Scikit-learn", "Streamlit", "Plotly", "Pandas", "K-Means", "Random Forest"],
@@ -22,16 +28,19 @@ const projects: Project[] = [
     title: "Content-Based Image Retrieval",
     description: "Conducted a thesis on content-based image retrieval using joint color texture techniques such as LTP, LTrP and Color Histogram. Presented at the 28th International Conference on Computer and Information Technology (ICCIT 2025).",
     technologies: ["Python", "OpenCV", "Machine Learning", "Image Processing"],
+    githubUrl: "https://github.com/rdas757/Content-Based-Image-Retrieval",
   },
   {
     title: "Transport System",
     description: "A comprehensive transport management system to streamline operations, track vehicles, and manage schedules.",
     technologies: ["React", "Node.js", "MongoDB", "Express"],
+    githubUrl: "https://github.com/rdas757/Transport-System",
   },
   {
-    title: "Dice Game",
-    description: "An interactive dice game application with multiplayer functionality and score tracking.",
-    technologies: ["JavaScript", "HTML5", "CSS3"],
+    title: "BloodFit",
+    description: "An AI-powered health platform that generates personalized nutrition and workout plans based on blood type. Includes a full user app and a super admin dashboard.",
+    technologies: ["AI", "React", "Node.js", "MongoDB", "Health Tech"],
+    githubUrl: "https://github.com/rdas757/BloodFit",
   },
 ];
 
